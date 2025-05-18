@@ -1,32 +1,68 @@
-#include <stdio.h>
-
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+# include <stdio.h>
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    //Desafio Xadrez
+    //Nìvel Novato
+    
+    //Declaração de variáveis
+    int movimentoBispo = 5;
+    int movimentoTorre = 5;
+    int movimentoRainha = 8;
+    int i;
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    //Menu para usuário escolher qual peça movimentar
+    do
+    {
+        printf("\n\n");
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+        printf("Seja Bem-Vindo(a) ao jogo de Xadrez!\n");
+        printf("Escolha quais peças deseja movimentar e digite o número que a representa :\n");
+        printf("1 - Bispo\n");
+        printf("2 - Torre\n");
+        printf("3 - Rainha\n");
+        printf("4 - Sair do jogo\n");
+        printf("Opção : ");
+        scanf(" %d", &i);
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+        if(i == 1)
+        {
+            //Movimento do Bispo
+            int x = 0;
+            while (x < movimentoBispo)
+            {
+                printf("Cima Direita\n");
+                x++;
+            }
+            
+        } else if (i == 2) {
+
+            //Movimento da Torre    
+            int y = 0;
+            do
+            {
+                printf("Direita\n");
+                y++;
+
+            } while (y < 5);
+    
+        } else if(i == 3) {
+            //Movimento da Rainha
+             for (int z = 0; z < 8; z++)
+             {
+                 printf("Esquerda\n");
+             }   
+                
+        } else if(i == 4) {
+            printf("Você saiu do jogo.");
+        } else {
+            printf("Opção inválida"); 
+        }
+
+    } while (i != 4);
 
     return 0;
+
 }
